@@ -19,7 +19,9 @@ public class AreaAndPerimeter extends javax.swing.JFrame {
      */
     public AreaAndPerimeter() {
         initComponents();
+        //Setting of the window in the middle of the computer screen
         setLocationRelativeTo(null);
+        //Setting of the default button on the form
         rootPane.getRootPane().setDefaultButton(btnCalculate);
         
     }
@@ -172,6 +174,7 @@ public class AreaAndPerimeter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
+        //A method the validates the inputs before the area and perimeter are computed.
         if(isValidData())
         {
             double width = Double.parseDouble(txtWidth.getText());
@@ -271,6 +274,7 @@ private boolean  isPositiveNumber(JTextField textField, String name){
         return false;
     }
     }
+    //Catching of the nubmerformat exception if the user enter a string. It returns a false
     catch(NumberFormatException exe)
     {
        JOptionPane.showConfirmDialog(this.rootPane, name+ " shouldn't be characters", "Input Error", JOptionPane.WARNING_MESSAGE);
@@ -279,6 +283,7 @@ private boolean  isPositiveNumber(JTextField textField, String name){
         return false;
     }
 }
+//Declaration of various variable by netbeans
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculate;
     private javax.swing.JButton btnClear;
