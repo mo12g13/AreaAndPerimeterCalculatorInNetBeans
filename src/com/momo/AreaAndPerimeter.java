@@ -183,12 +183,12 @@ public class AreaAndPerimeter extends javax.swing.JFrame {
         
             // TODO add your handling code here:
     }//GEN-LAST:event_btnCalculateActionPerformed
-
+//An action listener that exit the form when clicked
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_btnExitActionPerformed
 
-    
+    //A method that clears the various fields when clicked
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         lblArea.setText("");
         lblPerimeter.setText("");
@@ -230,7 +230,7 @@ public class AreaAndPerimeter extends javax.swing.JFrame {
             }
         });
     }
-    
+    //A method that validates the various data being entered on the form
     private boolean  isValidData(){
         if(!isPresent(txtLength, "Length")){
             return  false;
@@ -246,6 +246,7 @@ public class AreaAndPerimeter extends javax.swing.JFrame {
         }
         return true;
     }
+    //A method that checks to see if the textfield is empty
     private boolean  isPresent(JTextField textField, String name)
     {
         if(textField.getText().equals(""))
@@ -257,6 +258,7 @@ public class AreaAndPerimeter extends javax.swing.JFrame {
         return  true;
         }
     }
+    //A method that checks to see if the number entered is positive and between 1-20
 private boolean  isPositiveNumber(JTextField textField, String name){
     try{
     if(Double.parseDouble(textField.getText())>0 && Double.parseDouble(textField.getText())<=20){
@@ -271,7 +273,7 @@ private boolean  isPositiveNumber(JTextField textField, String name){
     }
     catch(NumberFormatException exe)
     {
-       JOptionPane.showConfirmDialog(this.rootPane, name+ " shouldn't be characters", "Input Error", JOptionPane.ERROR);
+       JOptionPane.showConfirmDialog(this.rootPane, name+ " shouldn't be characters", "Input Error", JOptionPane.WARNING_MESSAGE);
         textField.requestFocus();
         textField.setText("");
         return false;
